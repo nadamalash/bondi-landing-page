@@ -1,0 +1,267 @@
+/* :root pseudo-class selector is used to select the highest-level parent of a given specification */
+:root {
+  --dark-color: #19283f;
+  --green-color: #33d1cc;
+  --red-color: #ff3150;
+  --yellow-color: #ffc400;
+  --section-color: #eff7fa;
+}
+body {
+  font-family: "Roboto", sans-serif;
+
+  /* rem stands for “root em”, 
+  a unit of measurement that represents the font size of the root element. 
+  This means that 1rem equals the font size of the html element, 
+  which for most browsers has a default value of 16px. */
+  font-size: 1rem; /* (1 * 16px) */
+}
+.main-btn {
+  background-color: var(--red-color) !important;
+  color: var(--yellow-color) !important;
+  padding: 0.5rem 1rem !important;
+}
+
+.main-btn:focus {
+  box-shadow: none !important;
+}
+
+.main-title::after {
+  content: "";
+  width: 7.5rem; /*(120px)*/
+  height: 0.13rem;
+  background-color: var(--green-color);
+  position: absolute;
+  bottom: -1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  /* The translateX(-50%) moves the element left by 50% of its own width. 
+  This is used in conjunction with the left: 50% rule to ensure 
+  that the element is truly centered horizontally within its containing block. */
+}
+/* Start Navbar */
+.navbar {
+  background-color: var(--dark-color);
+  height: 4.4rem; /* (72px) */
+}
+
+.navbar .navbar-toggler {
+  color: #fff;
+  border: 1px solid #fff;
+  font-size: 25px;
+}
+
+.navbar .navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* using attribute selector */
+.navbar .navbar-toggler[aria-expanded="true"] {
+  border-color: var(--green-color);
+}
+
+.navbar .navbar-nav .nav-link {
+  color: #fff;
+}
+
+.navbar .navbar-nav .nav-link:active,
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link:focus {
+  color: var(--green-color);
+}
+
+.navbar .search {
+  border-left: 1px solid var(--green-color);
+}
+
+.navbar .search svg {
+  color: var(--green-color);
+}
+
+/* End Navbar */
+
+/* Start Landing */
+.landing {
+  background-color: var(--dark-color);
+  min-height: calc(100vh - 4.4rem);
+}
+/* End Landing */
+
+/* Start Features*/
+.features .icons-holder {
+  height: 12.5rem;
+}
+
+.features .icons-holder svg {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.features .icons-holder .number {
+  font-size: 12rem; /*using font-size to set icon size*/
+  color: var(--section-color);
+}
+
+.features .icons-holder .icon {
+  color: var(--green-color);
+}
+
+.features .feature h4 {
+  color: var(--yellow-color);
+}
+/* End Features*/
+
+/* Start Our Work*/
+.our-work {
+  background-color: var(--section-color);
+}
+.our-work .nav-link {
+  color: rgba(0, 0, 0, 0.5);
+}
+.our-work .nav-link:hover {
+  color: var(--red-color);
+}
+
+.our-work .nav-link:active,
+.our-work .nav-link:focus {
+  background-color: var(--red-color);
+  color: var(--yellow-color);
+  padding: 0.5rem 1rem;
+}
+.our-work .box {
+  position: relative;
+}
+.our-work .box::after {
+  content: "Application";
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+  width: 0;
+  height: 100%;
+  position: absolute;
+  background: var(--green-color);
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: width 0.3s ease-in-out, opacity 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.our-work .box:hover::after {
+  opacity: 0.8;
+  width: 100%;
+}
+
+/* End Our Work */
+
+/* Start Stuff */
+/* End Stuff */
+
+/* Start Our Team */
+.our-team {
+  background-color: var(--section-color);
+}
+.our-team h2 {
+  color: var(--yellow-color);
+}
+
+.our-team .card img {
+  height: 30%;
+}
+.our-team .card .body {
+  height: 20%;
+}
+.our-team .card .card-title {
+  background-color: var(--green-color);
+  color: white;
+}
+/* End Our Team */
+
+/* Start Tech */
+/* End Tech */
+
+/* Start Project */
+.project {
+  background-color: var(--dark-color);
+}
+/* End Project */
+
+/* Start blog */
+/* End blog */
+
+/* Start subscribe */
+.subscribe {
+  background-color: var(--yellow-color);
+}
+
+.subscribe label {
+  color: var(--dark-color);
+}
+
+.subscribe input[type="email"],
+.subscribe input[type="email"]:focus {
+  padding: 0.2rem 0;
+  width: 100%;
+  background-color: var(--yellow-color);
+  color: white;
+  border: none;
+  border-radius: 0%;
+  border-bottom: 2px solid white;
+  box-shadow: none;
+}
+
+.subscribe input[type="email"]::placeholder {
+  color: white;
+}
+
+.subscribe button,
+.subscribe button:hover,
+.subscribe button:focus {
+  background-color: var(--dark-color);
+  color: var(--yellow-color);
+  padding: 0.5rem 1rem;
+  box-shadow: none;
+}
+
+/* End subscribe */
+
+/* Start footer */
+.footer {
+  background-color: var(--dark-color);
+}
+/* direct child (the first span only) */
+.footer .copyright > span {
+  color: var(--green-color) !important;
+}
+/* the second span */
+.footer .copyright div span {
+  color: var(--yellow-color);
+}
+
+.footer ul li a:link:focus {
+  box-shadow: none;
+  vertical-align: middle;
+}
+
+.footer .facebook-icon {
+  background-color: #296dc5;
+}
+
+.footer .twitter-icon {
+  background-color: #129ee0;
+}
+.footer .google-icon {
+  background-color: #e54c29;
+}
+.footer .instagram-icon {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+}
+/* End footer */
